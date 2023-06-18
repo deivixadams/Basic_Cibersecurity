@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cifrado y Descifrado XOR</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cifrado y Descifrado XOR</h1>
+        <h2>Mensaje original: "Amor"</h2>
+        <h2>Clave: "perd"</h2>
+        <h3>Cifrado</h3>
+        <table>
+            <tr>
+                <th>Letra</th>
+                <th>Binario</th>
+                <th>Clave</th>
+                <th>Binario</th>
+                <th>Resultado XOR</th>
+                <th>ASCII</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>01000001</td>
+                <td>p</td>
+                <td>01110000</td>
+                <td>00110001</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>m</td>
+                <td>01101101</td>
+                <td>e</td>
+                <td>01100101</td>
+                <td>00001000</td>
+                <td>\b</td>
+            </tr>
+            <tr>
+                <td>o</td>
+                <td>01101111</td>
+                <td>r</td>
+                <td>01110010</td>
+                <td>00011101</td>
+                <td>\x1D</td>
+            </tr>
+            <tr>
+                <td>r</td>
+                <td>01110010</td>
+                <td>d</td>
+                <td>01100100</td>
+                <td>00010110</td>
+                <td>\x16</td>
+            </tr>
+        </table>
+        <h3>Descifrado</h3>
+        <table>
+            <tr>
+                <th>Resultado XOR</th>
+                <th>ASCII</th>
+                <th>Clave</th>
+                <th>Binario</th>
+                <th>Resultado XOR</th>
+                <th>ASCII</th>
+            </tr>
+            <tr>
+                <td>00110001</td>
+                <td>1</td>
+                <td>p</td>
+                <td>01110000</td>
+                <td>01000001</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>00001000</td>
+                <td>\b</td>
+                <td>e</td>
+                <td>01100101</td>
+                <td>01101101</td>
+                <td>m</td>
+            </tr>
+            <tr>
+                <td>00011101</td>
+                <td>\x1D</td>
+                <td>r</td>
+                <td>01110010</td>
+                <td>01101111</td>
+                <td>o</td>
+            </tr>
+            <tr>
+                <td>00010110</td>
+                <td>\x16</td>
+                <td>d</td>
+                <td>01100100</td>
+                <td>01110010</td>
+                <td>r</td>
+            </tr>
+        </table>
+    </body>
+</html>

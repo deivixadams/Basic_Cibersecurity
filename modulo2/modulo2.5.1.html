@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de Cifrado César</title>
+  <script>
+    function cifrarCesar() {
+      var mensajeOriginal = document.getElementById("mensajeOriginal").value;
+      var desplazamiento = parseInt(document.getElementById("desplazamiento").value);
+      var mensajeCifrado = "";
+
+      for (var i = 0; i < mensajeOriginal.length; i++) {
+        var caracter = mensajeOriginal[i];
+
+        // Solo se aplica el cifrado a las letras del alfabeto
+        if (caracter.match(/[a-zA-Z]/)) {
+          var codigoAscii = mensajeOriginal.charCodeAt(i);
+          var codigoCifrado = (codigoAscii - 65 + desplazamiento) % 26 + 65;
+
+          if (codigoAscii >= 97 && codigoAscii <= 122) {
+            codigoCifrado = (codigoAscii - 97 + desplazamiento) % 26 + 97;
+          }
+
+          caracter = String.fromCharCode(codigoCifrado);
+        }
+
+        mensajeCifrado += caracter;
+      }
+
+      document.getElementById("mensajeCifrado").innerHTML = mensajeCifrado;
+    }
+  </script>
+</head>
+<body>
+  <h2>Ejemplo de Cifrado César</h2>
+  <label for="mensajeOriginal">Mensaje original:</label>
+  <input type="text" id="mensajeOriginal">
+  <br>
+  <label for="desplazamiento">Desplazamiento:</label>
+  <input type="number" id="desplazamiento">
+  <br>
+  <button onclick="cifrarCesar()">Cifrar</button>
+  <br>
+  <label for="mensajeCifrado">Mensaje cifrado:</label>
+  <p id="mensajeCifrado"></p>
+</body>
+</html>
